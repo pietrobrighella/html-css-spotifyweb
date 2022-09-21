@@ -16,6 +16,7 @@ GLOBAL SETUP
     --dark: #141922;
     --dark-grey: #282828;
     --grey: #a3a3a3;
+    --grey-med: #5a5a5a;
     --light-grey: #c1c1c1; 
     --lime: #adff2f;
 
@@ -76,6 +77,7 @@ LAYOUT
     width: 100%;
     height: 100vh;
     background-color: blue;
+    overflow: hidden;
 }
 
 main {
@@ -361,4 +363,108 @@ nav li p {
     background: var(--lime);
     height: 2px;
     width: 30px;
+}
+
+/* Footer */
+.control-bar {
+    color: var(--white);
+}
+
+.inner-control-bar {
+    height: 100%;
+    padding: 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3000;
+}
+
+.inner-control-bar-sx {
+    align-items: center;
+    flex-basis: 25%;
+}
+
+.inner-control-bar-center {
+    align-items: center;
+    flex-direction: column;
+    padding-left: 20px;
+    flex-basis: 50%;
+    gap: 15px;
+}
+
+.inner-control-bar-dx {
+    align-items: center;
+    flex-basis: 25%;
+    gap: 25px;
+    justify-content: flex-end;
+}
+
+.inner-control-bar-sx img {
+    width: 70px;
+    padding-right: 15px;
+}
+
+.favourite {
+    padding-left: 35px;
+    color: var(--grey);
+    font-size: var(--font-l);
+}
+
+.favourite :first-child {
+    padding-right: 15px;
+}
+
+.control {
+    font-size: 2rem;
+    gap: 40px;
+    align-items: center;
+}
+
+.play {
+    font-size: 3rem;
+}
+
+.time-bar {
+    align-items: center;
+    font-weight: 600;
+}
+
+.bar {
+    height: 5px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: var(--grey-med);
+    margin: 0 20px;
+    position: relative;
+}
+
+.bar:after {
+    display: block;
+    position: absolute;
+    content: '';
+    background: var(--light-grey);
+    height: 5px;
+    width: 250px;
+    border-radius: 20px 0 0 20px;
+}
+
+.inner-control-bar-dx i {
+    font-size: 1.2rem;
+}
+
+.vol {
+    height: 5px;
+    width: 120px;
+    border-radius: 20px;
+    background-color: var(--grey-med);
+    position: relative;
+}
+
+.vol:after {
+    display: block;
+    position: absolute;
+    content: '';
+    background: var(--light-grey);
+    height: 5px;
+    width: 30px;
+    border-radius: 20px 0 0 20px;
 }
