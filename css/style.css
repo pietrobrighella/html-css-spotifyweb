@@ -346,6 +346,7 @@ nav li p {
     justify-content: center;
     padding-bottom: 40px;
     height: 30px;
+    flex-wrap: wrap;
 }
 
 .inner-menu li {
