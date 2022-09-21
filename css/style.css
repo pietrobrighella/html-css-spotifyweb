@@ -88,6 +88,7 @@ nav {
     width: 230px;
     height: 100%;
     background-color: var(--black);
+    z-index: 1100;
 }
 
 .main-content {
@@ -123,7 +124,7 @@ nav {
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 section h2 {
@@ -188,11 +189,154 @@ COMPONENT
     color: var(--lime);
 }
 
+.cards {
+    width: calc((100% / 6) - 15px);
+    flex-direction: row;
+    padding: 25px 0;
+    gap: 15px;
+}
 
 
 /*********************************
-CUSTOMIZATION
+OTHER CUSTOMIZATION
 *********************************/
+
+/* Navbar */
+nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    color: var(--grey);
+    position: relative;
+    padding: 20px 20px;
+}
+
+nav img {
+    width: 80%;
+}
+
+.menu {
+    padding-top: 30px;
+    position: relative;
+}
+
+.menu li:hover:before {
+    display: block;
+    position: absolute;
+    left: -20px;
+    content: '';
+    background: var(--lime);
+    height: 35px;
+    width: 3px;
+    margin-top: -4px;
+}
+
+.menu li:hover .menu-icon {
+    fill: var(--white);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.menu li:hover p {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 24px;
+    fill: var(--grey);
+}
+
+nav li svg {
+    color: var(--white);
+    vertical-align: top;
+}
+
+nav li p {
+    line-height: 28px;
+    font-size: var(--font-s);
+    font-weight: 600;
+    display: inline;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.playlist {
+    flex-direction: column;
+    height: calc(100% - 250px);
+    overflow: auto;
+}
+
+.playlist li {
+    padding-top: 10px;
+}
+
+.playlist li:hover p {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.playlist-title {
+    padding-top: 25px;
+    padding-bottom: 8px;
+    font-weight: 700;
+    font-size: var(--font-s);
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.add-playlist {
+    background-color: var(--grey);
+    padding: 8px 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.playlist li:hover .add-playlist {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.add-playlist i {
+    font-size: 1.2rem;
+    color: #000000;
+    padding: 10px;
+}
+
+.profile-box {
+    padding-top: 15px;
+    align-items: center;
+    gap: 10px;
+}
+
+.install-app-box {
+    align-items: center;
+    gap: 5px;
+}
+
+.profile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0 10px 25px;
+    background-color: var(--black);
+    width: 100%;
+}
+
+.profile-img svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--white);
+    background-color: var(--grey);
+    border-radius: 50px;
+}
+
+.install-app svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    fill: var(--grey);
+}
+
 
 /* Inner menù */
 .inner-menu {
@@ -217,12 +361,4 @@ CUSTOMIZATION
     background: var(--lime);
     height: 2px;
     width: 30px;
-}
-
-/* Recently played */
-.cards {
-    width: calc((100% / 6) - 15px);
-    flex-direction: row;
-    padding: 25px 0;
-    gap: 15px;
 }
