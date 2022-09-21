@@ -389,7 +389,7 @@ nav li p {
     flex-direction: column;
     padding-left: 20px;
     flex-basis: 50%;
-    gap: 15px;
+    gap: 10px;
 }
 
 .inner-control-bar-dx {
@@ -407,7 +407,7 @@ nav li p {
 .favourite {
     padding-left: 35px;
     color: var(--grey);
-    font-size: var(--font-l);
+    font-size: 1.25rem;
 }
 
 .favourite :first-child {
@@ -415,13 +415,13 @@ nav li p {
 }
 
 .control {
-    font-size: 2rem;
+    font-size: 1.5rem;
     gap: 40px;
     align-items: center;
 }
 
 .play {
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .time-bar {
@@ -449,7 +449,7 @@ nav li p {
 }
 
 .inner-control-bar-dx i {
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .vol {
