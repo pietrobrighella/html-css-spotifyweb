@@ -573,6 +573,11 @@ MEDIA QUERY
         width: calc(100% - 60px);
     }
 
+    .inner-menu {
+        gap: 0.8rem;
+        padding-bottom: 50px;
+    }
+
     .profile {
         padding-left: 16px;
     }
