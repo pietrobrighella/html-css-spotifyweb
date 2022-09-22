@@ -84,6 +84,10 @@ main {
     display: flex;
 }
 
+.no-possible {
+    display: none;
+}
+
 nav {
     width: 230px;
     height: 100%;
@@ -136,6 +140,15 @@ section h2 {
 COMPONENT
 *********************************/
 
+.logo-small {
+    display: none;
+    cursor: pointer;
+}
+
+.logo-large {
+    cursor: pointer;
+}
+
 .btn-upg {
     border: 1.5px solid var(--white);
     background-color: transparent;
@@ -156,33 +169,39 @@ COMPONENT
 .card {
     flex-direction: column;
     text-align: center;
-    width: 100%;
-    height: 100%;
+    width: calc((100% / 6) - 15px);
     gap: 10px;
+}
+
+.card div.d-flex {
     position: relative;
 }
 
-.card span i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.card div img {
+    width: 100%;
+    height: 100%;
 }
 
-.card:hover span img {
-    filter: contrast(200%) brightness(50%) opacity(50%);
-    transition: .3s;
+.hover-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
 }
 
-.card:hover span:after {
-    display: block;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-    content: '\f144';
-    font-size: 3rem;
-    color: var(--white);
-    position: absolute;
-    top: calc(50% - 1.5rem);
-    left: calc(50% - 1.5rem);
+.hover-card i {
+    font-size: 2.5rem;
+    display: none;
+}
+
+.card:hover .hover-card, .card:hover .hover-card i {
+    display: flex;
 }
 
 .card:hover h3 {
@@ -190,8 +209,7 @@ COMPONENT
 }
 
 .cards {
-    width: calc((100% / 6) - 15px);
-    flex-direction: row;
+    flex-flow: row wrap;
     padding: 25px 0;
     gap: 15px;
 }
@@ -262,7 +280,7 @@ nav li p {
 
 .playlist {
     flex-direction: column;
-    height: calc(100% - 250px);
+    height: calc(100% - 280px);
     overflow: auto;
 }
 
@@ -389,7 +407,6 @@ nav li p {
 .inner-control-bar-center {
     align-items: center;
     flex-direction: column;
-    padding-left: 20px;
     flex-basis: 50%;
     gap: 10px;
 }
@@ -399,6 +416,7 @@ nav li p {
     flex-basis: 25%;
     gap: 25px;
     justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 .inner-control-bar-sx img {
@@ -407,7 +425,7 @@ nav li p {
 }
 
 .favourite {
-    padding-left: 35px;
+    padding-left: 1rem;
     color: var(--grey);
     font-size: 1.25rem;
 }
@@ -422,6 +440,10 @@ nav li p {
     align-items: center;
 }
 
+.control i {
+    cursor: pointer;
+}
+
 .play {
     font-size: 2.5rem;
 }
@@ -429,7 +451,7 @@ nav li p {
 .time-bar {
     align-items: center;
     font-weight: 600;
-    width: 100%;
+    width: 90%;
 }
 
 .bar {
@@ -439,6 +461,7 @@ nav li p {
     background-color: var(--grey-med);
     margin: 0 20px;
     position: relative;
+    cursor: pointer;
 }
 
 .bar:after {
@@ -453,6 +476,11 @@ nav li p {
 
 .inner-control-bar-dx i {
     font-size: 1rem;
+}
+
+.inner-control-menu {
+    align-items: center;
+    gap: 25px;
 }
 
 .vol {
@@ -471,4 +499,134 @@ nav li p {
     height: 5px;
     width: 30px;
     border-radius: 20px 0 0 20px;
+}
+
+.vol:hover:after, .bar:hover:after {
+    background-color: var(--lime);
+}
+
+.brano-title-mobile {
+    display: none;
+}
+
+
+/*********************************
+MEDIA QUERY
+*********************************/
+@media screen and (max-width:1200px) {
+    .card {
+        width: calc((100% / 4) - 15px);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .card {
+        width: calc((100% / 2) - 15px);
+    }
+}
+
+@media screen and (max-width:576px) {
+    .menu li p, .playlist-title, .playlist li, .install-app-box h4, .profile-box h3 {
+        display: none;
+    }
+
+    .menu li {
+        padding-bottom: 15px;
+    }
+
+    .install-app {
+        padding-left: 4px;
+        cursor: pointer;
+    }
+
+    .logo-small {
+        display: flex;
+        width: 30px;
+        margin-left: -3px;
+    }
+
+    .logo-large {
+        display: none;
+    }
+
+    nav {
+        width: 60px;
+        height: calc(100% - 85px);
+    }
+
+    .main-content {
+        width: calc(100% - 60px);
+    }
+
+    .profile {
+        padding-left: 16px;
+    }
+
+    .profile-img {
+        cursor: pointer;
+    }
+
+    .control-bar {
+        height: 180px;
+    }
+
+    .inner-control-bar {
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .inner-control-bar-sx {
+        display: none;
+    }
+
+    .inner-control-bar-dx {
+        filter: brightness(.6);
+        cursor: pointer;
+    }
+
+    .inner-control-bar-dx:hover {
+        filter: brightness(1);
+    }
+
+    .brano-title-mobile {
+        display: flex;
+        padding-bottom: 10px;
+        font-size: calc(var(--font-s) - .1rem);
+        filter: brightness(.6);
+    }
+
+    .time-bar {
+        width: 120%;
+    }
+
+    .upg-bar {
+        display: none;
+    }
+
+    .inner-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: calc(100% - 85px);
+    }
+}
+
+@media screen and (max-width:310px) {
+    .no-possible {
+        display: flex;
+        align-items: center;
+        background-color: var(--black);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 3000;
+    }
+
+    .no-possible h4 {
+        text-align: center;
+        font-size: var(--font-m);
+        padding: 0 20px;
+    }
 }
