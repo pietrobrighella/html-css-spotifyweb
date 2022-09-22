@@ -29,6 +29,8 @@ GLOBAL SETUP
 
 html {
     font-family: 'Montserrat', sans-serif;
+    
+    /* mobile viewport bug fix */
     height: -webkit-fill-available;
 }
 
