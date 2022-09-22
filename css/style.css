@@ -324,11 +324,13 @@ nav li p {
     padding-top: 15px;
     align-items: center;
     gap: 10px;
+    cursor: pointer;
 }
 
 .install-app-box {
     align-items: center;
     gap: 5px;
+    cursor: pointer;
 }
 
 .profile {
@@ -371,6 +373,19 @@ nav li p {
     text-transform: uppercase;
     color: var(--grey);
     cursor: pointer;
+}
+
+.inner-menu :first-child:after {
+    display: block;
+    margin: 3px auto;
+    content: '';
+    background: var(--lime);
+    height: 2px;
+    width: 30px;
+}
+
+.inner-menu :first-child {
+    color: var(--white);
 }
 
 .inner-menu li:hover:after {
