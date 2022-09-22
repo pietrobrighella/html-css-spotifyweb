@@ -29,6 +29,7 @@ GLOBAL SETUP
 
 html {
     font-family: 'Montserrat', sans-serif;
+    height: -webkit-fill-available;
 }
 
 ul {
