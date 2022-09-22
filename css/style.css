@@ -75,6 +75,8 @@ LAYOUT
 .wrapper {
     width: 100%;
     height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
     background-color: blue;
     overflow: hidden;
 }
