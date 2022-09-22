@@ -19,8 +19,6 @@ GLOBAL SETUP
     --grey-med: #5a5a5a;
     --light-grey: #c1c1c1; 
     --lime: #adff2f;
-
-
 }
 
 .clearfix::after {
@@ -366,6 +364,10 @@ nav li p {
     width: 30px;
 }
 
+.inner-menu li:hover {
+    color: var(--white);
+}
+
 /* Footer */
 .control-bar {
     color: var(--white);
@@ -427,11 +429,12 @@ nav li p {
 .time-bar {
     align-items: center;
     font-weight: 600;
+    width: 100%;
 }
 
 .bar {
     height: 5px;
-    width: 600px;
+    width: 80%;
     border-radius: 20px;
     background-color: var(--grey-med);
     margin: 0 20px;
@@ -444,7 +447,7 @@ nav li p {
     content: '';
     background: var(--light-grey);
     height: 5px;
-    width: 250px;
+    width: 25%;
     border-radius: 20px 0 0 20px;
 }
 
