@@ -81,7 +81,7 @@ LAYOUT
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
 
-    background-color: yellow;
+    background-color: red;
     overflow: hidden;
 }
 
