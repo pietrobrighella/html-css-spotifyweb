@@ -573,7 +573,7 @@ MEDIA QUERY
 
     nav {
         width: 60px;
-        height: calc(100vh - 180px);
+        height: calc(100vh - 95px);
     }
 
     .main-content {
@@ -586,6 +586,7 @@ MEDIA QUERY
     }
 
     .profile {
+        bottom: 95px;
         padding-left: 16px;
     }
 
